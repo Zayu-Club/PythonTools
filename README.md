@@ -4,8 +4,8 @@ Some Python3 scripts to improve productivity<br>
 
 ## Extract_IP_from_URL_in_Excel<br>
 Extract the valid IP from the URL string of the xlsx file and put it in another column<br>
-Yes, you read that right, the xsl format is not supported. It is impossible to adapt to what should be thrown into the garbage in the future. If you need to use it in an xsl file, please convert it to xslx format first. You can subscribe to Office365 through the following link to get the latest Office suite:<br>
-[Office365](https://www.microsoft.com/en-us/microsoft-365/)<br>
+Yes, you read that right, the xls format is not supported. It is impossible to adapt to what should be thrown into the garbage in the future. If you need to use it in an xsl file, please convert it to xslx format first. You can subscribe to Office365 through the following link to get the latest Office suite:<br>
+[https://www.microsoft.com/en-us/microsoft-365/](https://www.microsoft.com/en-us/microsoft-365/)<br>
 ### Operation premise<br>
 python3+<br>
 pip openpyxl<br>
