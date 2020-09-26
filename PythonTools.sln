@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Extract_IP_from_URL_in_Excel", "Extract_IP_from_URL_in_Excel\Extract_IP_from_URL_in_Excel.pyproj", "{F7C5A940-2FF1-482C-8CA8-1CD98BECB01A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7C5A940-2FF1-482C-8CA8-1CD98BECB01A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7C5A940-2FF1-482C-8CA8-1CD98BECB01A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {162D1901-A4A7-4884-A4EF-DC4AE91D5E88}
+	EndGlobalSection
+EndGlobal
