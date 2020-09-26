@@ -7,7 +7,7 @@ Extract the valid IP from the URL string of the xlsx file and put it in another 
 ### Operation premise<br>
 python3+<br>
 pip openpyxl<br>
-Before running, you also need to modify some parameters in aaa.py:<br>
+Before running, you also need to modify some parameters in Extract_IP_from_URL_in_Excel.py:<br>
 * `workPath`:Path to workbook.
 * `sheetName`:The name of the worksheet.
 * `urlCol`:The column number of the extracted IP.
