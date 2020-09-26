@@ -10,7 +10,7 @@ pip openpyxl<br>
 Before running, you also need to modify some parameters in Extract_IP_from_URL_in_Excel.py:<br>
 * `workPath`:Path to workbook.
 * `sheetName`:The name of the worksheet.
-* `urlCol`:The column number of the extracted IP.
+* `urlCol`:Column number of URL.
 * `dstCol`:The line number filled in with the extracted IP.<br>
 
 Note that the index of row number and column number starts from 1, not 0
