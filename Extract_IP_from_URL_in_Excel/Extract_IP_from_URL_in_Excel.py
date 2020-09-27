@@ -29,12 +29,13 @@ def main():
     #遍历提取IP写入dstCol列中
     for i in range(2,maxRow+1):
         urlStr = workSheet.cell(row=i, column=urlCol).value
-        print("[INFO]读取的URL：" + urlStr)
-        res = getUrl2ip(urlStr)
-        print("[INFO]提取结果：" + res[0])
-        directionCell = workSheet.cell(row=i, column=dstCol)
-        directionCell.value = res[0]
-        print("[INFO]写入IP")
+        if urlStr:
+            print("[INFO]读取的URL：" + urlStr)
+            res = getUrl2ip(urlStr)
+            print("[INFO]提取结果：" + res[0])
+            directionCell = workSheet.cell(row=i, column=dstCol)
+            directionCell.value = res[0]
+            print("[INFO]写入IP")
     workBook.save("D:\提取IP测试工作簿.xlsx")
 
 if __name__ == '__main__':
