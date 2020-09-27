@@ -30,13 +30,13 @@ def main():
     for i in range(2,maxRow+1):
         urlStr = workSheet.cell(row=i, column=urlCol).value
         if urlStr:
-            print("[INFO]读取的URL：" + urlStr)
-            res = getUrl2ip(urlStr)
+            print("[INFO]读取的URL：" + str(urlStr))
+            res = getUrl2ip(str(urlStr))
             print("[INFO]提取结果：" + res[0])
             directionCell = workSheet.cell(row=i, column=dstCol)
             directionCell.value = res[0]
             print("[INFO]写入IP")
-    workBook.save("D:\提取IP测试工作簿.xlsx")
+    workBook.save(workPath)
 
 if __name__ == '__main__':
     args = 'n'
