@@ -14,6 +14,10 @@ Before running, you also need to modify some parameters in Extract_IP_from_URL_i
 * `sheetName`:The name of the worksheet.
 * `urlCol`:The column number of URL.
 * `dstCol`:The column number filled in with the extracted IP.<br>
-#### Note 
+#### Update - 09/29/2020
+* Support to convert domain name URL to IP address.<br>
+* Support extracting multiple IP addresses corresponding to domain names.<br>
+* Support the extraction of URLs containing multiple IP addresses in the same cell.<br>
+#### Note
 * that the index of row number and column number starts from 1, not 0.<br>
 * Suggestion: Modify the cell format of the URL field to text.
