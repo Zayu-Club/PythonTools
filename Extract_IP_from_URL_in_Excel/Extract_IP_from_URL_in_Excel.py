@@ -13,15 +13,18 @@ DSTCOL = 3
 #由URL获取域名
 def getDomainFromURL(url):
     #若url没有HTTP前缀，则加上前缀
-    if(not url.startswith('http')): 
-        url = 'http://' + url
-    parsed_uri = urlparse(url)
-    domain = '{uri.netloc}'.format(uri=parsed_uri)
-    #若url有端口号，则从{uri.netloc}中去掉端口号，得到最终域名
-    index_port = domain.find(':')
-    if(not index_port == -1):
-        domain = domain[:-(len(domain) - index_port)]
-    print("[INFO]提取域名 " + domain)
+    try:
+        if(not url.startswith('http')): 
+            url = 'http://' + url
+        parsed_uri = urlparse(url)
+        domain = '{uri.netloc}'.format(uri=parsed_uri)
+        #若url有端口号，则从{uri.netloc}中去掉端口号，得到最终域名
+        index_port = domain.find(':')
+        if(not index_port == -1):
+            domain = domain[:-(len(domain) - index_port)]
+        print("[INFO]提取域名 " + domain)
+    except Exception as e:
+        return '-'
     return domain
 
 #由域名获取IP列表
