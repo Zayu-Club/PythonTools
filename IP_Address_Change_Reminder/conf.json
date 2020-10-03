@@ -1,0 +1,20 @@
+{
+    "public_ip": "",
+    "cycle_period": 10,
+    "remindServerChan": {
+        "enable": "false",
+        "sckey": ""
+    },
+    "remindMail": {
+        "enable": "false",
+        "smtp_host": "",
+        "smtp_user": "",
+        "smtp_pass": "",
+        "sender": "",
+        "receivers": [
+			"",
+			"",
+            ""
+        ]
+    }
+}

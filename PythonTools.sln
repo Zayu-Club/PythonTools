@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Extract_IP_from_URL_in_Excel", "Extract_IP_from_URL_in_Excel\Extract_IP_from_URL_in_Excel.pyproj", "{F7C5A940-2FF1-482C-8CA8-1CD98BECB01A}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "IP_Address_Change_Reminder", "IP_Address_Change_Reminder\IP_Address_Change_Reminder.pyproj", "{4B5380D0-73BD-44E2-9DEA-6DAB3406BE2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F7C5A940-2FF1-482C-8CA8-1CD98BECB01A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F7C5A940-2FF1-482C-8CA8-1CD98BECB01A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B5380D0-73BD-44E2-9DEA-6DAB3406BE2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B5380D0-73BD-44E2-9DEA-6DAB3406BE2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
