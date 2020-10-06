@@ -40,6 +40,8 @@ Before running, you also need to modify some parameters in conf.json:<br>
 * `smtp_pass`:Email password used by sender
 * `sender`:Email address used by sender
 * `receivers`:The recipient¡¯s email address, supports multiple recipients<br>
+#### Update - 10/06/2020
+* Fixed: Program crash caused by network connection interruption.<br>
 #### Note
 * The `public_ip` field in the `conf.json` file can be left blank and does not need to be modified. When the latest address is obtained, it will be filled in automatically.
 * You can use your own mail server or the SMTP service provided by a third-party mail service provider.

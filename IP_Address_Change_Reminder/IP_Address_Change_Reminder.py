@@ -30,8 +30,8 @@ def GetPublicIpAddress():
         reponse = requests.get(requestIpUrl)   
         responseIpAddress = reponse.text
     except Exception as e:
-        print("[WARN]Failed to obtain public network address, retrying..." + sys.exc_info()[0])
-        return
+        print("[WARN]Failed to obtain public network address, retrying...")
+        return 'Failed'
     print("[INFO]Successfully obtained public network address: " + responseIpAddress)
     return responseIpAddress
 
@@ -45,7 +45,7 @@ def SendWechat(config,messageTitle,messageStr):
             reponse = requests.get(reqStr,params={'text': messageTitle, 'desp': messageStr})
             print("[DEBUG]HTTP GET Reponse :" + reponse.text.encode('utf-8').decode('unicode_escape'))
         except Exception as e:
-            print("[ERROR]Failed to send WechatMessage", sys.exc_info()[0])
+            print("[ERROR]Failed to send WechatMessage")
 
 def SendMessage(config,messageStr):
     if(config['remindMail']['enable'] == "true"):
@@ -67,23 +67,23 @@ def SendMessage(config,messageStr):
             smtpObj.sendmail(sender, receivers, message.as_string())
             print("[INFO]Mail sent successfully")
         except smtplib.SMTPException:
-            print("[ERROR]Failed to send mail", sys.exc_info()[0])
+            print("[ERROR]Failed to send mail")
 
 def UpdateRecord(config):
     conf_ip = config['public_ip']
-    new_ip = GetPublicIpAddress()
-    if(not conf_ip == new_ip):
-        print("[INFO]IP address has been updated")
-        try:
+    try:
+        new_ip = GetPublicIpAddress()
+        if(not conf_ip == new_ip and not new_ip == 'Failed'):
+            print("[INFO]IP address has been updated")      
             config['public_ip'] = new_ip
             with open(CONFPATH, 'w+') as new_conf:
-                    json.dump(config, new_conf, indent=4)
+                json.dump(config, new_conf, indent=4)
             new_conf.close()
             print("[INFO]Update record successfully")
             return True
-        except Exception as e:
-            print("[ERROR]Failed to Update record", sys.exc_info()[0])
-            return False
+    except Exception as e:
+        print("[ERROR]Failed to Update record")
+        return False
     else:
         return False
 

@@ -12,8 +12,8 @@
         "smtp_pass": "",
         "sender": "",
         "receivers": [
-			"",
-			"",
+            "",
+            "",
             ""
         ]
     }
