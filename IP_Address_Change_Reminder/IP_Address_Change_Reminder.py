@@ -47,6 +47,19 @@ def SendWechat(config,messageTitle,messageStr):
         except Exception as e:
             print("[ERROR]Failed to send WechatMessage")
 
+def SendWechatPushBear(config,messageTitle,messageStr):
+    if(config['remindPushBear']['enable'] == "true"):
+        print("[INFO]Config['remindPushBear']['enable'] value is : true ,should send WechatPushBear message")
+        SendKey = config['remindPushBear']['SendKey']
+        print("[INFO]Your PushBearn Token: " + SendKey)
+        reqStr = "https://pushbear.ftqq.com/sub"
+        try:
+            reponse = requests.get(reqStr,params={'sendkey': SendKey, 'text': messageTitle, 'desp': messageStr}) 
+            print("[DEBUG]HTTP GET Reponse :" + reponse.text.encode('utf-8').decode('unicode_escape'))
+        except Exception as e:
+            print("[ERROR]Failed to send remindPushBearMessage")
+
+
 def SendMessage(config,messageStr):
     if(config['remindMail']['enable'] == "true"):
         print("[INFO]Config['remindMail']['enable'] value is : true ,should send message")
@@ -89,26 +102,24 @@ def UpdateRecord(config):
 
 def main():
     while(True):
-        init_conf = ReadConfig(CONFPATH, 'r')
-        cycle_period = init_conf['cycle_period']
-        boolUpdated = UpdateRecord(init_conf)
-        if(boolUpdated):
-            conf = ReadConfig(CONFPATH, 'r')
-            msgTitle = "IP address has been updated"
-            msgText = "The public IP address of the node you are following has been updated. The new address is: " + conf['public_ip']
-            SendMessage(conf, msgText)
-            SendWechat(conf, msgTitle, msgText)
+        CONFIG_FILE = ReadConfig(CONFPATH, 'r')     
+        CYCLE_PERIOD = CONFIG_FILE['cycle_period']
 
         timeNow = datetime.datetime.now()
         timeNow.strftime("%Y/%m/%d %H:%M:%S")
-        timeNext = timeNow + datetime.timedelta(seconds = 60*cycle_period)
+
+        boolUpdated = UpdateRecord(CONFIG_FILE)
+        if(boolUpdated):
+            msgTitle = "公网IP地址变更提醒"
+            msgText = "The public IP address of the node you are following has been updated. The new address is: " + CONFIG_FILE['public_ip']
+            SendMessage(CONFIG_FILE, msgText)
+            SendWechat(CONFIG_FILE, msgTitle, msgText)
+            SendWechatPushBear(CONFIG_FILE, msgTitle, msgText)
+    
+        timeNext = timeNow + datetime.timedelta(seconds = 60*CYCLE_PERIOD)
         print("[INFO]Next Check Time: " + str(timeNext))
 
-        time.sleep(60*cycle_period)
+        time.sleep(60*CYCLE_PERIOD)
 
 if __name__ == '__main__':
     main()
-
-
-
-    

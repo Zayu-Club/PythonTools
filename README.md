@@ -29,19 +29,24 @@ In environments with dynamic IP addresses, monitor IP address changes and issue 
 This tool currently supports ServerChan and email notifications.<br>
 Serverchan is a third-party messaging platform that can push messages to your WeChat. You need to log in to ServerChan and obtain a token, and then associate it with your WeChat account. For specific usage, please refer to:<br>
 [http://sc.ftqq.com/3.version](http://sc.ftqq.com/3.version).<br>
+[http://pushbear.ftqq.com/admin/#/](http://pushbear.ftqq.com/admin/#/).<br>
 ### Operation premise<br>
 python 3+<br>
 requirements:certifi==2020.6.20 chardet==3.0.4 idna==2.10 pip==20.1.1 requests==2.24.0 setuptools==47.1.0 urllib3==1.25.10<br>
 Before running, you also need to modify some parameters in conf.json:<br>
 * `cycle_period`:Detection cycle, the unit is "minutes".
 * `sckey`:The token value used by ServerChan. If ServerChan is not used for message push, the value of remindServerChan is set to false, and the remindServerChan node is ignored.
+* `SendKey`:The token value used by PushBear. If PushBear is not used for message push, the value of remindPushBear is
+set to false, and the remindPushBear node is ignored.
 * `smtp_host`:SMTP Server
 * `smtp_user`:Sender user name(Email address used by sender)
 * `smtp_pass`:Email password used by sender
 * `sender`:Email address used by sender
-* `receivers`:The recipient¡¯s email address, supports multiple recipients<br>
+* `receivers`:The recipientï¿½ï¿½s email address, supports multiple recipients<br>
 #### Update - 10/06/2020
 * Fixed: Program crash caused by network connection interruption.<br>
+#### Update - 19/02/2021
+* Added PushBear push support.<br>
 #### Note
 * The `public_ip` field in the `conf.json` file can be left blank and does not need to be modified. When the latest address is obtained, it will be filled in automatically.
 * You can use your own mail server or the SMTP service provided by a third-party mail service provider.

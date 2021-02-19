@@ -1,19 +1,21 @@
 {
     "public_ip": "",
-    "cycle_period": 10,
+    "cycle_period": 5,
     "remindServerChan": {
-        "enable": "false",
+        "enable": "true",
         "sckey": ""
     },
-    "remindMail": {
+    "remindPushBear": {
         "enable": "false",
+        "SendKey": ""
+    },
+    "remindMail": {
+        "enable": "true",
         "smtp_host": "",
         "smtp_user": "",
         "smtp_pass": "",
         "sender": "",
         "receivers": [
-            "",
-            "",
             ""
         ]
     }
