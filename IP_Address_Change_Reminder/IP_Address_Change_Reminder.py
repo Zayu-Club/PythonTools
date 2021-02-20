@@ -104,7 +104,6 @@ def main():
     while(True):
         CONFIG_FILE = ReadConfig(CONFPATH, 'r')     
         CYCLE_PERIOD = CONFIG_FILE['cycle_period']
-
         timeNow = datetime.datetime.now()
         timeNow.strftime("%Y/%m/%d %H:%M:%S")
 
