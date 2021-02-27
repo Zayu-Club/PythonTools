@@ -1,0 +1,12 @@
+[Unit]
+Description=IP Address Change Remindernge Reminder
+Documentation=https://github.com/Zayu-Club/PythonToolsub.com/Zayu-Club/PythonTools
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/xxy/PythonTools/IP_Address_Change_Reminder /home/xxy/PythonTools/IP_Address_Change_Reminder/IP_Address_Change_Reminder.py > ip.log &
+ExecStart=/usr/bin/python3 -u /home/xxy/PythonTools/IP_Address_Change_Reminder/IP_Address_Change_Reminder.py
+StandardOutput=/home/xxy/PythonTools/IP_Address_Change_Reminder/ip.log
+[Install]
+WantedBy=multi-user.target
