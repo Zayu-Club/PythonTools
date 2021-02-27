@@ -47,6 +47,9 @@ set to false, and the remindPushBear node is ignored.
 * Fixed: Program crash caused by network connection interruption.<br>
 #### Update - 19/02/2021
 * Added PushBear push support.<br>
+#### Update - 28/02/2021
+* Added Service file.<br>
+* If you use Ubuntu or other distributions, you can use the Service file to use it as a service.<br>
 #### Note
 * The `public_ip` field in the `conf.json` file can be left blank and does not need to be modified. When the latest address is obtained, it will be filled in automatically.
 * You can use your own mail server or the SMTP service provided by a third-party mail service provider.
